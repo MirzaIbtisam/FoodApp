@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
       debugShowCheckedModeBanner: false,
-      home:mainscreen(),
+      home:MaintainBalance(),
     );
   }
 }
