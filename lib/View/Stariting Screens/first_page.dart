@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_getx/View/Chooes%20Meal%20Plan/Meal_Plan.dart';
 import 'package:food_app_getx/View/Sign%20In/Sign_In.dart';
-import 'package:food_app_getx/View/Welcome/Welcome.dart';
+import 'package:food_app_getx/constant/assets/assets.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-class FirstScreensViewModel extends GetxController {
-  final PageController pageController = PageController();
-  final RxInt currentIndex = 0.obs;
-
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
-}
+import 'package:country_picker/country_picker.dart';
+import '../../View Model/First Screens ViewModel/FirstScreensViewModel.dart';
+import '../../constant/color/color.dart';
 
 class FirstScreens extends StatefulWidget {
   const FirstScreens({Key? key}) : super(key: key);
@@ -28,18 +21,21 @@ class _FirstScreensState extends State<FirstScreens> {
 
   @override
   Widget build(BuildContext context) {
-    print('Rebuild');
     return Scaffold(
       body: PageView(
         controller: controller.pageController,
         children: [
           FirstScreenContent(
             controller: controller.pageController,
-            key: PageStorageKey('FirstScreen'),
+            key: const PageStorageKey('FirstScreen'), // Unique key
           ),
           SecondScreenContent(
             controller: controller.pageController,
-            key: PageStorageKey('SecondScreen'),
+            key: const PageStorageKey('SecondScreen'), // Unique key
+          ),
+          ThirdScreenContent(
+            controller: controller.pageController,
+            key: const PageStorageKey('ThirdScreen'), // Unique key
           ),
         ],
         onPageChanged: (index) {
@@ -66,12 +62,11 @@ class _FirstScreenContentState extends State<FirstScreenContent>
 
   @override
   Widget build(BuildContext context) {
-    print('Rebuild');
     return Column(
       children: [
         SizedBox(height: 80),
         SvgPicture.asset(
-          "assets/Nutrition_Foods.svg",
+          ImageAssets.Nutrition_Foods,
           height: Get.height * .1,
         ),
         SizedBox(height: 30),
@@ -82,7 +77,7 @@ class _FirstScreenContentState extends State<FirstScreenContent>
             style: TextStyle(
               fontSize: 12,
               fontFamily: "Gilory",
-              color: Color(0xffa4a0a0),
+              color: ColorValues.darkBgColor,
             ),
           ),
         ),
@@ -101,7 +96,7 @@ class _FirstScreenContentState extends State<FirstScreenContent>
               ),
               elevation: 0.0,
               side: BorderSide(
-                color: Color(0xffe65744),
+                color: ColorValues.ElevatedColor,
                 width: 1.0,
               ),
             ),
@@ -110,7 +105,7 @@ class _FirstScreenContentState extends State<FirstScreenContent>
               style: TextStyle(
                 fontSize: 12,
                 fontFamily: "Gilory",
-                color: Color(0xffE54C38),
+                color: ColorValues.ElevatedColor,
               ),
             ),
           ),
@@ -120,7 +115,7 @@ class _FirstScreenContentState extends State<FirstScreenContent>
             Align(
               alignment: Alignment.topRight,
               child: SvgPicture.asset(
-                "assets/Food_Pic.svg",
+                ImageAssets.Food_Pic,
                 height: Get.height * 0.5950,
               ),
             ),
@@ -129,10 +124,10 @@ class _FirstScreenContentState extends State<FirstScreenContent>
               child: Center(
                 child: SmoothPageIndicator(
                   controller: widget.controller, // Use widget.controller
-                  count: 2,
+                  count: 3,
                   effect: WormEffect(
-                    activeDotColor: Color(0xffe54c38),
-                    dotColor: Color(0xffd4d4d6),
+                    activeDotColor: ColorValues.ElevatedColor,
+                    dotColor: ColorValues.dotColor,
                     spacing: 8.0,
                   ),
                 ),
@@ -161,12 +156,11 @@ class _SecondScreenContentState extends State<SecondScreenContent>
 
   @override
   Widget build(BuildContext context) {
-    print('Rebuild');
     return Column(
       children: [
         SizedBox(height: 80),
         SvgPicture.asset(
-          "assets/Nutrition_Foods.svg",
+          ImageAssets.Nutrition_Foods,
           height: Get.height * .1,
         ),
         SizedBox(height: 30),
@@ -177,7 +171,7 @@ class _SecondScreenContentState extends State<SecondScreenContent>
             style: TextStyle(
               fontSize: 12,
               fontFamily: "Gilory",
-              color: Color(0xffa4a0a0),
+              color: ColorValues.darkBgColor,
             ),
           ),
         ),
@@ -186,7 +180,7 @@ class _SecondScreenContentState extends State<SecondScreenContent>
           width: Get.width * .5,
           child: ElevatedButton(
             onPressed: () {
-              Get.to(() => Welcome());
+              Get.to(() => null);
               print('Button pressed');
             },
             style: ElevatedButton.styleFrom(
@@ -196,7 +190,7 @@ class _SecondScreenContentState extends State<SecondScreenContent>
               ),
               elevation: 0.0,
               side: BorderSide(
-                color: Color(0xffe65744),
+                color: ColorValues.ElevatedColor,
                 width: 1.0,
               ),
             ),
@@ -205,7 +199,7 @@ class _SecondScreenContentState extends State<SecondScreenContent>
               style: TextStyle(
                 fontSize: 12,
                 fontFamily: "Gilory",
-                color: Color(0xffE54C38),
+                color: ColorValues.ElevatedColor,
               ),
             ),
           ),
@@ -215,7 +209,7 @@ class _SecondScreenContentState extends State<SecondScreenContent>
             Align(
               alignment: Alignment.topRight,
               child: SvgPicture.asset(
-                "assets/Food_Pic.svg",
+                ImageAssets.Food_Pic,
                 height: Get.height * 0.5950,
               ),
             ),
@@ -224,10 +218,10 @@ class _SecondScreenContentState extends State<SecondScreenContent>
               child: Center(
                 child: SmoothPageIndicator(
                   controller: widget.controller, // Use widget.controller
-                  count: 2,
+                  count: 3,
                   effect: WormEffect(
-                    activeDotColor: Color(0xffe54c38),
-                    dotColor: Color(0xffd4d4d6),
+                    activeDotColor: ColorValues.ElevatedColor,
+                    dotColor: ColorValues.dotColor,
                     spacing: 8.0,
                   ),
                 ),
@@ -239,3 +233,192 @@ class _SecondScreenContentState extends State<SecondScreenContent>
     );
   }
 }
+
+class ThirdScreenContent extends StatefulWidget {
+  final PageController controller;
+
+  ThirdScreenContent({required this.controller, Key? key}) : super(key: key);
+
+  @override
+  _ThirdScreenContentState createState() => _ThirdScreenContentState();
+}
+
+class _ThirdScreenContentState extends State<ThirdScreenContent>
+    with AutomaticKeepAliveClientMixin<ThirdScreenContent> {
+  final ThirdScreenController controller = Get.put(ThirdScreenController());
+  Country? _selectedCountry;
+
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Column(
+        children: [
+          SizedBox(height: 40),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              _selectedCountry != null
+                  ? 'Selected Country: ${_selectedCountry!.name}'
+                  : 'Select a Country',
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          SvgPicture.asset(
+            ImageAssets.Veg_Fry,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Welcome to',
+                style: TextStyle(fontSize: 22),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                'Fresh Feel!',
+                style: TextStyle(
+                    fontSize: 22, color: ColorValues.ElevatedColor),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 26,
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+            child: Text(
+              'Make menu changes up to 48 hours prior to delivery & cancel your meal for redeemable credits! ',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 14),
+            ),
+          ),
+          SizedBox(
+            height: 32,
+          ),
+          InkWell(
+            onTap: () {
+              // Change the color when tapped
+              controller.togglePickPlan();
+
+              // Delay the navigation by a short duration (e.g., 200 milliseconds)
+              Future.delayed(Duration(milliseconds: 200), () {
+                if (controller.pickPlan.value) {
+                  // Navigate to a new screen
+                  Get.to(() => MealPlan()); // Replace YourNewScreen with the screen you want to navigate to
+                }
+              });
+            },
+            child: Obx(() => Container(
+                  decoration: BoxDecoration(
+                    color: controller.pickPlan.value
+                        ? ColorValues.ElevatedColor
+                        : ColorValues.checkColor,
+                    borderRadius: BorderRadius.all(Radius.circular(32)),
+                  ),
+                  height: 45,
+                  width: 300,
+                  child: Center(
+                    child: Text(
+                      'Help me pick a plan',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: "Gilory",
+                        color: ColorValues.whiteColor,
+                      ),
+                    ),
+                  ),
+                )),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          InkWell(
+            onTap: () {
+              // Change the color when tapped
+              controller.toggleIAlreadyHave();
+
+              // Delay the navigation by a short duration (e.g., 200 milliseconds)
+              Future.delayed(Duration(milliseconds: 200), () {
+                if (controller.iAlreadyHave.value) {
+                  // Navigate to a new screen
+                  Get.to(() => null); // Replace YourNewScreen with the screen you want to navigate to
+                }
+              });
+            },
+            child: Obx(() => Container(
+              decoration: BoxDecoration(
+                color: controller.iAlreadyHave.value
+                    ? ColorValues.ElevatedColor
+                    : ColorValues.checkColor,
+                borderRadius: BorderRadius.all(Radius.circular(32)),
+              ),
+              height: 45,
+              width: 300,
+              child: Center(
+                child: Text(
+                  'I already know what I want',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: "Gilory",
+                    color: ColorValues.whiteColor,
+                  ),
+                ),
+              ),
+            )),
+          ),
+
+          SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Already have an Account?',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Gilory",
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Get.to(() => SignIn());
+                },
+                child: Text(
+                  ' Log in',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: "Gilory",
+                    color: ColorValues.ElevatedColor,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          SmoothPageIndicator(
+            controller: widget.controller, // Use widget.controller
+            count: 3,
+            effect: WormEffect(
+              activeDotColor: ColorValues.ElevatedColor,
+              dotColor: ColorValues.dotColor,
+              spacing: 8.0,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+

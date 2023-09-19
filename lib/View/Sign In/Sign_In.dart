@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_getx/View/Home%20Screen/Home_Screen.dart';
 import 'package:food_app_getx/View/Sign%20Up/Sign_Up.dart';
+import 'package:food_app_getx/constant/color/color.dart';
 import 'package:get/get.dart';
 
 import '../../View Model/SignInViewModel/SignInViewModel.dart';
+import '../../constant/assets/assets.dart';
 
 class SignIn extends StatelessWidget {
   SignIn({super.key});
@@ -20,22 +23,22 @@ class SignIn extends StatelessWidget {
           child: Column(
             children: [
               SvgPicture.asset(
-                "assets/Plant.svg",
+                ImageAssets.Plant,
                 height: Get.height * 0.4,
               ),
               Text(
                 "Sign In",
                 style: TextStyle(
                   fontSize: 22,
-                  color: Color(0xff233245),
+                  color: ColorValues.NavyblueColor,
                   fontFamily: "Gilory",
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: 40),
-              CustomTextField("assets/mailBox.svg", "johnsondoe@nomail.com."),
+              CustomTextField(ImageAssets.mailBox, "johnsondoe@nomail.com."),
               SizedBox(height: 20),
-              CustomTextField("assets/Lock.svg", "••••••••••••••••••••"),
+              CustomTextField(ImageAssets.Lock, "••••••••••••••••••••"),
               Align(
                 alignment: Alignment.topRight,
                 child: TextButton(
@@ -45,7 +48,7 @@ class SignIn extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 10,
                       fontFamily: "Gilory",
-                      color: Color(0xff515151),
+                      color: ColorValues.TxtColor,
                     ),
                   ),
                 ),
@@ -55,11 +58,12 @@ class SignIn extends StatelessWidget {
                 width: Get.width * .4500,
                 child: ElevatedButton(
                   onPressed: () {
+                    Get.to(() => HomeScreen());
                     // Add your button press logic here
                     print('Button pressed');
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xffE54C38),
+                    primary: ColorValues.ElevatedColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(32),
                     ),
@@ -70,7 +74,7 @@ class SignIn extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontFamily: "Gilory",
-                      color: Colors.white,
+                      color: ColorValues.whiteColor,
                     ),
                   ),
                 ),
@@ -81,16 +85,16 @@ class SignIn extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 12,
                   fontFamily: "Gilory",
-                  color: Color(0xff233245),
+                  color: ColorValues.NavyblueColor,
                 ),
               ),
               SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset("assets/Google.svg"),
+                  SvgPicture.asset(ImageAssets.Google),
                   SizedBox(width: 10),
-                  SvgPicture.asset("assets/Apple.svg"),
+                  SvgPicture.asset(ImageAssets.Apple),
                 ],
               ),
               SizedBox(height: 20),
@@ -102,7 +106,7 @@ class SignIn extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12,
                       fontFamily: "Gilory",
-                      color: Color(0xffBBBBBB),
+                      color: ColorValues.lightgryColor,
                     ),
                   ),
                   InkWell(onTap: (){Get.to(() => SignUp());},
@@ -111,7 +115,7 @@ class SignIn extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontFamily: "Gilory",
-                        color: Color(0xffE54C38),
+                        color: ColorValues.ElevatedColor,
                       ),
                     ),
                   ),
@@ -130,7 +134,7 @@ class SignIn extends StatelessWidget {
       ) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: ColorValues.whiteColor,
         borderRadius: BorderRadius.circular(32),
         boxShadow: [
           BoxShadow(
@@ -156,7 +160,7 @@ class SignIn extends StatelessWidget {
           hintStyle: TextStyle(
             fontSize: 12,
             fontFamily: "Gilory",
-            color: Color(0xffDFDFDF),
+            color: ColorValues.checkColor,
           ),
           prefixIcon: SvgPicture.asset(
             icon,
@@ -166,7 +170,7 @@ class SignIn extends StatelessWidget {
               ? SizedBox()
               : Icon(
             CupertinoIcons.eye_fill,
-            color: Color(0xff2f7825),
+            color: ColorValues.GreenColor,
           ),
         ),
       ),

@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app_getx/View/Sign%20In/Sign_In.dart';
+import 'package:food_app_getx/constant/color/color.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../View Model/SignUpViewModel/SignUpViewModel.dart';
+import '../../constant/assets/assets.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({super.key});
@@ -21,26 +23,26 @@ class SignUp extends StatelessWidget {
           child: Column(
             children: [
               SvgPicture.asset(
-                "assets/Food.svg",
+                ImageAssets.Food,
                 height: Get.height * 0.4,
               ),
               Text(
                 "Sign Up",
                 style: TextStyle(
                   fontSize: 22,
-                  color: Color(0xff233245),
+                  color: ColorValues.NavyblueColor,
                   fontFamily: "Gilory",
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: 20),
-              CustomTextField("assets/Person.svg", "First name"),
+              CustomTextField(ImageAssets.Person, "First name"),
               SizedBox(height: 15),
-              CustomTextField("assets/Person.svg", "Last name"),
+              CustomTextField(ImageAssets.Person, "Last name"),
               SizedBox(height: 15),
-              CustomTextField("assets/mailBox.svg", "Email"),
+              CustomTextField(ImageAssets.mailBox, "Email"),
               SizedBox(height: 15),
-              CustomTextField("assets/Lock.svg", "Password"),
+              CustomTextField(ImageAssets.Lock, "Password"),
               SizedBox(height: 20),
               SizedBox(
                 width: Get.width * .4500,
@@ -51,7 +53,7 @@ class SignUp extends StatelessWidget {
                     print('Button pressed');
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xffE54C38),
+                    primary: ColorValues.ElevatedColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(32),
                     ),
@@ -62,7 +64,7 @@ class SignUp extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontFamily: "Gilory",
-                      color: Colors.white,
+                      color: ColorValues.whiteColor,
                     ),
                   ),
                 ),
@@ -73,16 +75,16 @@ class SignUp extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 12,
                   fontFamily: "Gilory",
-                  color: Color(0xff233245),
+                  color: ColorValues.NavyblueColor,
                 ),
               ),
               SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset("assets/Google.svg"),
+                  SvgPicture.asset(ImageAssets.Google),
                   SizedBox(width: 10),
-                  SvgPicture.asset("assets/Apple.svg"),
+                  SvgPicture.asset(ImageAssets.Apple),
                 ],
               ),
               SizedBox(height: 20),
@@ -94,7 +96,7 @@ class SignUp extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12,
                       fontFamily: "Gilory",
-                      color: Color(0xffBBBBBB),
+                      color: ColorValues.lightgryColor,
                     ),
                   ),
                   InkWell(
@@ -106,7 +108,7 @@ class SignUp extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontFamily: "Gilory",
-                        color: Color(0xffE54C38),
+                        color: ColorValues.ElevatedColor,
                       ),
                     ),
                   ),
@@ -121,12 +123,12 @@ class SignUp extends StatelessWidget {
   }
 
   Widget CustomTextField(
-      String icon,
-      String hinttext,
-      ) {
+    String icon,
+    String hinttext,
+  ) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: ColorValues.whiteColor,
         borderRadius: BorderRadius.circular(32),
         boxShadow: [
           BoxShadow(
@@ -156,7 +158,7 @@ class SignUp extends StatelessWidget {
             hintStyle: TextStyle(
               fontSize: 12,
               fontFamily: "Gilory",
-              color: Color(0xffDFDFDF),
+              color: ColorValues.checkColor,
             ),
             prefixIcon: SvgPicture.asset(
               icon,
@@ -164,9 +166,9 @@ class SignUp extends StatelessWidget {
             ),
             suffixIcon: hinttext == "Password"
                 ? Icon(
-              CupertinoIcons.eye_fill,
-              color: Color(0xff2f7825),
-            )
+                    CupertinoIcons.eye_fill,
+                    color: ColorValues.GreenColor,
+                  )
                 : SizedBox()),
       ),
     );

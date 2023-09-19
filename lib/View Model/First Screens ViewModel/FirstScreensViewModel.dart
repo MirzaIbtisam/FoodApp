@@ -7,16 +7,24 @@ class FirstScreensViewModel extends GetxController {
   final RxInt currentIndex = 0.obs;
 
   @override
-  void onInit() {
-    super.onInit();
-    pageController.addListener(() {
-      currentIndex.value = pageController.page!.round();
-    });
-  }
-
-  @override
-  void onClose() {
+  void dispose() {
     pageController.dispose();
-    super.onClose();
+    super.dispose();
   }
 }
+
+class ThirdScreenController extends GetxController {
+  RxBool pickPlan = false.obs;
+  RxBool iAlreadyHave = false.obs;
+
+  void togglePickPlan() {
+    pickPlan.value = !pickPlan.value;
+    iAlreadyHave.value = false;
+  }
+
+  void toggleIAlreadyHave() {
+    pickPlan.value = false;
+    iAlreadyHave.value = !iAlreadyHave.value;
+  }
+}
+

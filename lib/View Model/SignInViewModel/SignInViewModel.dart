@@ -6,7 +6,6 @@ class SignInController extends GetxController {
 
   void emailchanged(String value) {
     email.value = value;
-    print('Text');
   }
 
   void passwordchanged(String value) {
