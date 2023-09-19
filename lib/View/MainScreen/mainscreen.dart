@@ -256,86 +256,250 @@ class _mainscreenState extends State<mainscreen> {
             SizedBox(
               height: 10,
             ),
-
-
-
-
-
-
-
-
             Padding(
-              padding: const EdgeInsets.fromLTRB(10,0,10,0),
-              child: Container(
-                height: 120,
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(5,18,5,0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Container(
-                                child: Card(
-                                  elevation: 6,
-
-                                  child: Text('1100-1300'),),
-                            height: 40,
-                              width: 100,
-
-
-                            ),
-                            Container(
-                              child: Card(child: Text('1100-1300'),),
-                              height: 40,
-                              width: 100,
-
-
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              child: Card(child: Text('1100-1300'),),
-                              height: 40,
-                              width: 100,
-
-
-                            ),
-                            Container(
-                              child: Card(child: Text('1100-1300'),),
-                              height: 40,
-                              width: 100,
-
-
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              child: Card(child: Text('1100-1300'),),
-                              height: 40,
-                              width: 100,
-
-
-                            ),
-                            Container(
-                              child: Card(child: Text('1100-1300'),),
-                              height: 40,
-                              width: 100,
-
-                            ),
-                          ],
-                        ),
-                      ],
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child: SizedBox(
+                  height: 120,
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(5, 18, 5, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: SizedBox(
+                                  child: Card(
+                                    child: Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                        8,
+                                        0,
+                                        0,
+                                        0,
+                                      ),
+                                      child: Text(
+                                        ' Suggested 1100-1300',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Color.fromRGBO(
+                                              229,
+                                              76,
+                                              56,
+                                              1,
+                                            ),
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  ),
+                                  height: 40,
+                                  width: 100,
+                                ),
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: SizedBox(
+                                  child: Card(
+                                    child: Center(child: Text('1100-1300')),
+                                  ),
+                                  height: 40,
+                                  width: 100,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: SizedBox(
+                                  child: Card(
+                                    child: Center(child: Text('1100-1300')),
+                                  ),
+                                  height: 40,
+                                  width: 100,
+                                ),
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: SizedBox(
+                                  child: Card(
+                                    child: Center(child: Text('1100-1300')),
+                                  ),
+                                  height: 40,
+                                  width: 100,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: SizedBox(
+                                  child: Card(
+                                    child: Center(child: Text('1100-1300')),
+                                  ),
+                                  height: 40,
+                                  width: 100,
+                                ),
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: SizedBox(
+                                  child: Card(
+                                    child: Center(child: Text('1100-1300')),
+                                  ),
+                                  height: 40,
+                                  width: 100,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 23),
+                  child: Text(
+                    'Still looking for a plan?',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 18),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: SizedBox(
+                      height: 35,
+                      width: 150,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Add your button's action here
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.red, // Background color
+                          onPrimary: Colors.white, // Text color
+                        ),
+                        child: Text(
+                          'see other plans',
+                          style: TextStyle(
+                            color: Colors.white, // Text color
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: SizedBox(
+                width: 330,
+                height: 150,
+                child: Card(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text(
+                              'Pakage Price',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: Text(
+                              'AED 3200.00',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 7,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                        child: Divider(
+                          thickness: 2,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 7,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12 ,),
+                            child: Text(
+                              'Subtotal',
+                              style: TextStyle( fontSize: 16,fontWeight: FontWeight.bold , color: Color.fromRGBO(229,76,56,1)),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 70),
+                            child: Text('(Incl .VAT ,)' , style: TextStyle(fontSize: 12),),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: Text('AED 3300.00' , style: TextStyle(fontSize: 16),),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10,),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: SizedBox(
+                          height: 35,
+                          width: 150,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Add your button's action here
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.red, // Background color
+                              onPrimary: Colors.white, // Text color
+                            ),
+                            child: Text(
+                              'checkout',
+                              style: TextStyle(
+                                color: Colors.white, // Text color
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
           ],
         ),
       ),
