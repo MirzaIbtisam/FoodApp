@@ -60,10 +60,6 @@ class _NoFavouritesYetState extends State<NoFavouritesYet> {
             style: TextStyle(fontSize: 14),
             textAlign: TextAlign.center,
           ),
-
-
-
-
           SizedBox(
             height: 15,
           ),
@@ -75,8 +71,7 @@ class _NoFavouritesYetState extends State<NoFavouritesYet> {
                 // Add your button's action here
               },
               style: ElevatedButton.styleFrom(
-                primary:
-                Color.fromRGBO(229, 76, 56, 1), // Background color
+                primary: Color.fromRGBO(229, 76, 56, 1), // Background color
                 onPrimary: Colors.white, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0),
@@ -91,34 +86,6 @@ class _NoFavouritesYetState extends State<NoFavouritesYet> {
               ),
             ),
           ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         ],
       ),
     ));
