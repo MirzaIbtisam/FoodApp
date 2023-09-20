@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class MaintainBalance extends StatefulWidget {
   const MaintainBalance({Key? key}) : super(key: key);
@@ -143,7 +145,7 @@ class _MaintainBalanceState extends State<MaintainBalance> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: Colors.white,
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -237,135 +239,184 @@ class _MaintainBalanceState extends State<MaintainBalance> {
               ),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-                itemCount: 2,
-                itemBuilder: (context, index) {
-                  return Column(
+          SizedBox(height: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text("Your Breakfast for that day",
+                      style: TextStyle(fontSize: 14, color: Colors.black)),
+                ),
+                SizedBox(height: 3),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(32)),
+                  height: Get.height * 0.1700,
+                  width: Get.width,
+                  child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0,20,130,0,),
-                        child: Text(
-                          'Your nutrients for that day',
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(45),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                          child: Card(
-                            child: Row(
-                              children: [
-                                Stack(
-                                  children: [
-                                    Image.asset(
-                                      'assets/shrimp-pad-thai-white-background.png',
-                                      height: 160,
-                                      width: 160,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          9, 120, 0, 0),
-                                      child: Opacity(
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(
-                                                30.0), // Radius for the bottom-left corner
-                                            bottomRight: Radius.circular(
-                                                30.0), // Radius for the bottom-right corner
-                                          ),
-                                          child: Container(
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.fromLTRB(
-                                                      8, 4, 0, 0),
-                                              child: Text(
-                                                'Salad and Vegetables',
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 13),
-                                              ),
-                                            ),
-                                            color: Colors.white,
-                                            height: 24,
-                                            width: 144,
-                                          ),
-                                        ),
-                                        opacity: 0.5,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                        20,
-                                        20,
-                                        0,
-                                        0,
-                                      ),
-                                      child: SvgPicture.asset(
-                                        'assets/heart.svg',
-                                        height: 20,
-                                        width: 20,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Nutrient-Rich brakfast De\nlight Scrambled Eggs wh\nole grain bread light Scra\nmbled Eggs whole',
-                                      textAlign: TextAlign.justify,
-                                    ),
-                                    SizedBox(
-                                      height: 18,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          0, 0, 50, 0),
-                                      child: SizedBox(
-                                        height: 35,
-                                        width: 110,
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
-                                          child: ElevatedButton(
-                                            onPressed: () {
-                                              // Add your button's action here
-                                            },
-                                            style: ElevatedButton.styleFrom(
-                                              primary: Color.fromRGBO(229, 76,
-                                                  56, 1), // Background color
-                                              onPrimary: Color.fromRGBO(
-                                                  229, 76, 56, 1), // Text color
-                                            ),
-                                            child: Text(
-                                              'Replace',
-                                              style: TextStyle(
-                                                color:
-                                                    Colors.white, // Text color
-                                                fontSize: 12,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: 6,
-                                    ),
-                                  ],
-                                ),
-                              ],
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    "assets/top-view-table-full-delicious-food-composition.png"),
+                                fit: BoxFit.cover)),
+                        height: Get.height * 0.1400,
+                        width: Get.width * 0.4,
+                        child: Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: SvgPicture.asset("assets/heart.svg"),
                             ),
-                          ),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(32),
+                                        bottomRight: Radius.circular(32))),
+                                height: 25,
+                                width: Get.width,
+                              ),
+                            )
+                          ],
                         ),
                       ),
+                      Column(
+                        children: [],
+                      )
                     ],
-                  );
-                }),
-          ),
+                  ),
+                ),
+              ],
+            ),
+          )
+          // ListView.builder(
+          //     itemCount: 2,
+          //     itemBuilder: (context, index) {
+          //       return Padding(
+          //         padding: const EdgeInsets.symmetric(horizontal: 15),
+          //         child: Column(
+          //           children: [
+          //             Align(alignment: Alignment.topLeft,
+          //               child: Text(
+          //                 'Your nutrients for that day',
+          //                 style: TextStyle(
+          //                     fontSize: 16, fontWeight: FontWeight.bold),
+          //               ),
+          //             ),
+          //             ClipRRect(
+          //               borderRadius: BorderRadius.circular(45),
+          //               child: Padding(
+          //                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+          //                 child: Card(
+          //                   child: Row(
+          //                     children: [
+          //                       Stack(
+          //                         children: [
+          //                           Image.asset(
+          //                             'assets/shrimp-pad-thai-white-background.png',
+          //                             height: 160,
+          //                             width: 160,
+          //                           ),
+          //                           Align(alignment: Alignment.bottomCenter,
+          //                             child: Opacity(
+          //                               child: ClipRRect(
+          //                                 borderRadius: BorderRadius.only(
+          //                                   bottomLeft: Radius.circular(
+          //                                       30.0), // Radius for the bottom-left corner
+          //                                   bottomRight: Radius.circular(
+          //                                       30.0), // Radius for the bottom-right corner
+          //                                 ),
+          //                                 child: Container(
+          //                                   child: Padding(
+          //                                     padding:
+          //                                         const EdgeInsets.fromLTRB(
+          //                                             8, 4, 0, 0),
+          //                                     child: Text(
+          //                                       'Salad and Vegetables',
+          //                                       style: TextStyle(
+          //                                           color: Colors.black,
+          //                                           fontWeight: FontWeight.bold,
+          //                                           fontSize: 13),
+          //                                     ),
+          //                                   ),
+          //                                   color: Colors.white,
+          //                                   height: 24,
+          //                                   width: 144,
+          //                                 ),
+          //                               ),
+          //                               opacity: 0.5,
+          //                             ),
+          //                           ),
+          //                           SvgPicture.asset(
+          //                             'assets/heart.svg',
+          //                             height: 20,
+          //                             width: 20,
+          //                           ),
+          //                         ],
+          //                       ),
+          //                       Column(
+          //                         children: [
+          //                           Text(
+          //                             'Nutrient-Rich brakfast De\nlight Scrambled Eggs wh\nole grain bread light Scra\nmbled Eggs whole',
+          //                             textAlign: TextAlign.justify,
+          //                           ),
+          //                           SizedBox(
+          //                             height: 18,
+          //                           ),
+          //                           Padding(
+          //                             padding: const EdgeInsets.fromLTRB(
+          //                                 0, 0, 50, 0),
+          //                             child: SizedBox(
+          //                               height: 35,
+          //                               width: 110,
+          //                               child: ClipRRect(
+          //                                 borderRadius:
+          //                                     BorderRadius.circular(30),
+          //                                 child: ElevatedButton(
+          //                                   onPressed: () {
+          //                                     // Add your button's action here
+          //                                   },
+          //                                   style: ElevatedButton.styleFrom(
+          //                                     primary: Color.fromRGBO(229, 76,
+          //                                         56, 1), // Background color
+          //                                     onPrimary: Color.fromRGBO(
+          //                                         229, 76, 56, 1), // Text color
+          //                                   ),
+          //                                   child: Text(
+          //                                     'Replace',
+          //                                     style: TextStyle(
+          //                                       color:
+          //                                           Colors.white, // Text color
+          //                                       fontSize: 12,
+          //                                     ),
+          //                                   ),
+          //                                 ),
+          //                               ),
+          //                             ),
+          //                           ),
+          //                           SizedBox(
+          //                             height: 6,
+          //                           ),
+          //                         ],
+          //                       ),
+          //                     ],
+          //                   ),
+          //                 ),
+          //               ),
+          //             ),
+          //           ],
+          //         ),
+          //       );
+          //     }),
         ],
       ),
     );
