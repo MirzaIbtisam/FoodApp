@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_getx/View/MainScreen/mainscreen.dart';
 import 'package:food_app_getx/View/MaintainBalance/maintainbalance.dart';
+import 'package:food_app_getx/View/MaintainBalanceSecondScreen/MaintainBalanceSecondScreen.dart';
 import 'package:food_app_getx/View/Stariting%20Screens/first_page.dart';
 import 'package:food_app_getx/View/YourGoal/yourgoal.dart';
 import 'package:get/get.dart';

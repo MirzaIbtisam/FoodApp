@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -95,12 +94,13 @@ class _MaintainBalanceState extends State<MaintainBalance> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 8,
+                      height: 21,
                     ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: SizedBox(
-                        width: 150,
+                    SizedBox(
+                      height: 35,
+                      width: 150,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
                         child: ElevatedButton(
                           onPressed: () {
                             // Add your button's action here
@@ -115,6 +115,7 @@ class _MaintainBalanceState extends State<MaintainBalance> {
                             style: TextStyle(
                               color:
                                   Color.fromRGBO(229, 76, 56, 1), // Text color
+                              fontSize: 12,
                             ),
                           ),
                         ),
@@ -238,28 +239,127 @@ class _MaintainBalanceState extends State<MaintainBalance> {
           ),
           Expanded(
             child: ListView.builder(
-                itemCount: 1,
+                itemCount: 2,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 130),
+                        padding: const EdgeInsets.fromLTRB(0,20,130,0,),
                         child: Text(
                           'Your nutrients for that day',
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Card(
-                        child: Row(
-                          children: [
-                            Stack(
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(45),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: Card(
+                            child: Row(
                               children: [
-                                Image.asset(
-                                    'assets/shrimp-pad-thai-white-background.png'),
+                                Stack(
+                                  children: [
+                                    Image.asset(
+                                      'assets/shrimp-pad-thai-white-background.png',
+                                      height: 160,
+                                      width: 160,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          9, 120, 0, 0),
+                                      child: Opacity(
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(
+                                                30.0), // Radius for the bottom-left corner
+                                            bottomRight: Radius.circular(
+                                                30.0), // Radius for the bottom-right corner
+                                          ),
+                                          child: Container(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      8, 4, 0, 0),
+                                              child: Text(
+                                                'Salad and Vegetables',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 13),
+                                              ),
+                                            ),
+                                            color: Colors.white,
+                                            height: 24,
+                                            width: 144,
+                                          ),
+                                        ),
+                                        opacity: 0.5,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                        20,
+                                        20,
+                                        0,
+                                        0,
+                                      ),
+                                      child: SvgPicture.asset(
+                                        'assets/heart.svg',
+                                        height: 20,
+                                        width: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      'Nutrient-Rich brakfast De\nlight Scrambled Eggs wh\nole grain bread light Scra\nmbled Eggs whole',
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                    SizedBox(
+                                      height: 18,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 50, 0),
+                                      child: SizedBox(
+                                        height: 35,
+                                        width: 110,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                          child: ElevatedButton(
+                                            onPressed: () {
+                                              // Add your button's action here
+                                            },
+                                            style: ElevatedButton.styleFrom(
+                                              primary: Color.fromRGBO(229, 76,
+                                                  56, 1), // Background color
+                                              onPrimary: Color.fromRGBO(
+                                                  229, 76, 56, 1), // Text color
+                                            ),
+                                            child: Text(
+                                              'Replace',
+                                              style: TextStyle(
+                                                color:
+                                                    Colors.white, // Text color
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 6,
+                                    ),
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ],
