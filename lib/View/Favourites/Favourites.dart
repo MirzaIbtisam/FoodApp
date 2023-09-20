@@ -39,8 +39,7 @@ class _FavouritesState extends State<Favourites> {
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                      margin: EdgeInsets.only(bottom: 12),
-                      child: Favourites());
+                      margin: EdgeInsets.only(bottom: 12), child: Favourites());
                 },
               ),
             ),
