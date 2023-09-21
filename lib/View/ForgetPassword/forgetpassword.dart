@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-
 import '../EditProfile/editprofile.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key});
-
   @override
   State<ForgetPassword> createState() => _ForgetPasswordState();
 }
@@ -43,18 +41,18 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               height: 20,
             ),
             Container(
-              height: Get.height * 0.75,
-              width: Get.width * 1,
+              height: Get.height * 0.54,
+              width: Get.width,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(150), // Adjust the radius as needed
-                ),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(150),
+                    topRight: Radius.circular(150)),
                 boxShadow: [
                   BoxShadow(
                     color: Color.fromRGBO(229, 76, 56, 1), // Shadow color
                     blurRadius: 5, // Blur radius
                     offset:
-                        Offset(0, 3), // Offset of the shadow (vertical offset)
+                        Offset(0, 2), // Offset of the shadow (vertical offset)
                   ),
                 ],
                 color: Colors.white, // Background color of the container
@@ -84,14 +82,15 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     ),
                     Container(
                       decoration: BoxDecoration(
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(
                             20), // Adjust the radius as needed
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.white, // Shadow color
-                            spreadRadius: 5, // Spread radius
-                            blurRadius: 7, // Blur radius
-                            offset: Offset(0, 3), // Offset in x and y direction
+                            color: Colors.grey, // Shadow color
+                            // Spread radius
+                            blurRadius: 5, // Blur radius
+                            offset: Offset(0, 2), // Offset in x and y direction
                           ),
                         ],
                       ),
