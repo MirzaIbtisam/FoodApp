@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_getx/View/EditProfile/editprofile.dart';
 import 'package:food_app_getx/View/Favourites/Favourites.dart';
+import 'package:food_app_getx/View/ForgetPassword/forgetpassword.dart';
 import 'package:food_app_getx/View/MainScreen/mainscreen.dart';
 import 'package:food_app_getx/View/MaintainBalance/maintainbalance.dart';
 import 'package:food_app_getx/View/MaintainBalanceSecondScreen/MaintainBalanceSecondScreen.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
       debugShowCheckedModeBanner: false,
-      home:EditProfile(),
+      home:ForgetPassword(),
     );
   }
 }
