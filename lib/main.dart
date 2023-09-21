@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_getx/View/ChangePassword/changepassword.dart';
 import 'package:food_app_getx/View/EditProfile/editprofile.dart';
 import 'package:food_app_getx/View/Favourites/Favourites.dart';
 import 'package:food_app_getx/View/ForgetPassword/forgetpassword.dart';
@@ -7,6 +8,7 @@ import 'package:food_app_getx/View/MaintainBalance/maintainbalance.dart';
 import 'package:food_app_getx/View/MaintainBalanceSecondScreen/MaintainBalanceSecondScreen.dart';
 import 'package:food_app_getx/View/NoFavouritesYet/nofavouritersyet.dart';
 import 'package:food_app_getx/View/Stariting%20Screens/first_page.dart';
+import 'package:food_app_getx/View/VerifyEmail/verifyyouremail.dart';
 import 'package:food_app_getx/View/YourGoal/yourgoal.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -25,8 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       builder: (context, widget) => ResponsiveWrapper.builder(
-        BouncingScrollWrapper.builder(
-            context, widget!), // Use BouncingScrollWrapper if needed
+        BouncingScrollWrapper.builder(context, widget!),
         maxWidth: 1200,
         minWidth: 300,
         defaultScale: true,
@@ -39,8 +40,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
       debugShowCheckedModeBanner: false,
-      home:ForgetPassword(),
+      home: ChangePassword(),
     );
   }
 }
-

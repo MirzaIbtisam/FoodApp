@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
+
 import '../EditProfile/editprofile.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({Key? key});
+class VerifyYourEmail extends StatefulWidget {
+  const VerifyYourEmail({super.key});
+
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<VerifyYourEmail> createState() => _VerifyYourEmailState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _VerifyYourEmailState extends State<VerifyYourEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(223, 223, 223, 1),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -35,14 +38,14 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             ),
             Center(
               child: Image.asset(
-                'assets/Forgot password-amico (1).png',
+                'assets/Enter OTP-amico.png',
               ),
             ),
             SizedBox(
               height: 20,
             ),
             Container(
-              height: Get.height * 0.54,
+              height: Get.height * 0.59,
               width: Get.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -66,7 +69,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       height: 50,
                     ),
                     Text(
-                      'Forget Password',
+                      'Verify your Email',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                     ),
@@ -74,42 +77,46 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       height: 5,
                     ),
                     Text(
-                      'Please enter your Email Address to\nReceive Verification Code',
+                      'Please enter the 4 Digit Code sent to \n johnsondoe@gmail.com',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 12),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(
-                            20), // Adjust the radius as needed
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey, // Shadow color
-                            // Spread radius
-                            blurRadius: 5, // Blur radius
-                            offset: Offset(0, 2), // Offset in x and y direction
-                          ),
-                        ],
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'johnsondoe@gmail.com',
-                          prefixIcon: Image.asset('assets/emailicon.png'),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide.none,
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide.none,
-                          ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: PinCodeTextField(
+                        appContext: context,
+                        length: 4,
+                        pinTheme: PinTheme(
+                          activeColor: Colors.black,
+                          selectedColor: Colors.black,
+                          inactiveColor: Colors.black,
+                          fieldHeight: 40,
+                          fieldWidth: 40,
+                          activeFillColor: Colors.white,
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 50,
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Didn't Receive a Code! "),
+                        Text(
+                          'Resend',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30,
                     ),
                     CustomButton(
                       text: 'Send',
