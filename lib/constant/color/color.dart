@@ -18,7 +18,7 @@ abstract class ColorValues {
   static const Color NavyblueColor = Color.fromARGB(255, 35, 50, 69);
 
   static const Color GreenColor = Color.fromARGB(255, 42, 120, 37);
-  static const Color lightDialogColor = Color.fromRGBO(252, 252, 252, 1);
+  static const Color lightpurpuleColor = Color.fromARGB(255, 32, 14, 50);
   static const Color lightBodyTextColor = Color.fromARGB(255, 30, 30, 30);
   static const Color lightChatBubbleColor = Color.fromARGB(255, 242, 242, 242);
   static const Color lightDividerColor = Color.fromARGB(255, 200, 200, 200);

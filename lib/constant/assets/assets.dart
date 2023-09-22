@@ -34,4 +34,34 @@ class ImageAssets {
   static const String Veg_Fry = 'assets/Veg_Fry.svg';
 
   static const String whatsapp = 'assets/whatsapp.svg';
+
+  static const String Salad$Veg = "assets/Salad & Veg.jpg";
+
+  static const String Like = "assets/Like.svg";
+
+  static const String DisLike = "assets/Liked.svg";
+
+  static const String EegVeg = "assets/Eeg & Veg.jpeg";
+
+  static const String breadEeg = "assets/bread & Eeg.jpg";
+
+  static const String ChickenBoti = "assets/chicken-tikka-boti.jpg";
+
+  static const String beefburgur = "assets/beef-burgers.webp";
+
+  static const String chickenkabab = "assets/chicken.Kabab.jpg";
+
+  static const String Spicypasta = "assets/Spicy_Chicken_Pasta2.jpg";
+
+  static const String nooddles = "assets/vegetable-noodles.jpg";
+
+  static const String VegPotato = "assets/veggie-potato.jpg";
+
+  static const String Potatosnaks = "assets/Patato-snaks.jpg";
+
+  static const String Potatosnaks1 = "assets/patato-snaks1.webp";
+
+  static const String Potatosnaksveg = "assets/potato-snak-veg.jpg";
+
+
 }

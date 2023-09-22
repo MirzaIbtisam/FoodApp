@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app_getx/View/Chooes%20Meal%20Plan/Meal_Plan.dart';
 import 'package:food_app_getx/View/Sign%20In/Sign_In.dart';
 import 'package:food_app_getx/constant/assets/assets.dart';
 import 'package:get/get.dart';
@@ -8,6 +7,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:country_picker/country_picker.dart';
 import '../../View Model/First Screens ViewModel/FirstScreensViewModel.dart';
 import '../../constant/color/color.dart';
+import '../Goal/Goal.dart';
 
 class FirstScreens extends StatefulWidget {
   const FirstScreens({Key? key}) : super(key: key);
@@ -313,7 +313,7 @@ class _ThirdScreenContentState extends State<ThirdScreenContent>
               Future.delayed(Duration(milliseconds: 200), () {
                 if (controller.pickPlan.value) {
                   // Navigate to a new screen
-                  Get.to(() => MealPlan()); // Replace YourNewScreen with the screen you want to navigate to
+                  Get.to(() => Goal()); // Replace YourNewScreen with the screen you want to navigate to
                 }
               });
             },

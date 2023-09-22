@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app_getx/View%20Model/HomeScreenViewModel/HomeScreenViewModel.dart';
-import 'package:food_app_getx/View/Chooes%20Meal%20Plan/Meal_Plan.dart';
-
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
+import 'package:get/get_core/src/get_main.dart';
+import '../../View Model/NewOffersViewModel/NewOffersViewModel.dart';
 import '../../constant/Widgets/widgets.dart';
 import '../../constant/assets/assets.dart';
 import '../../constant/color/color.dart';
 
+class NewOffers extends StatefulWidget {
+  const NewOffers({super.key});
 
-class HomeScreen extends StatefulWidget {
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<NewOffers> createState() => _NewOffersState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  final HomeScreenViewModel controller = Get.put(HomeScreenViewModel());
- // Initialize your controller
+class _NewOffersState extends State<NewOffers> {
+  NewOffersViewModel controller = Get.put(NewOffersViewModel());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 30,
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(() => MealPlan());
+                            Get.to(() => null);
                             // Add your button press logic here
                             print('Button pressed');
                           },
@@ -112,8 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: Get.width * .5,
                     height: 32,
                     child: ElevatedButton(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
                         shape: RoundedRectangleBorder(
@@ -165,9 +163,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           onPressed: controller.navigateToPreviousDay,
                         ),
                         Obx(() => Text(
-                          ' ${controller.formattedDate} ',
-                          style: TextStyle(fontSize: 12),
-                        )),
+                              ' ${controller.formattedDate} ',
+                              style: TextStyle(fontSize: 12),
+                            )),
                         IconButton(
                           icon: Icon(
                             Icons.arrow_forward_ios,
@@ -220,115 +218,64 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
-                  SeeAll("Select your Breakfast", "See All"),
+                  SizedBox(
+                    height: Get.height * 0.5,
+                    child: ListView.builder(
+                      itemCount: controller.img1.length,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return SelectDinner(
+                            controller.img1[index], controller.Txt1[index],controller.Txt[index]);
+                      },
+                    ),
+                  ),
+                  SeeAll("NewOffers your Dinner", "See All"),
+                  SizedBox(height: 10),
+                  SizedBox(
+                    height: 130,
+                    child: ListView.builder(
+                      itemCount: controller.img3.length,
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: EdgeInsets.only(right: 8),
+                          child: Breakfast(
+                            controller.img3[index],
+                            controller.Txt2[index],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  SeeAll("NewOffers Your Snack", "See All"),
+                  SizedBox(height: 10),
+                  SizedBox(
+                    height: 130,
+                    child: ListView.builder(
+                      itemCount: controller.img4.length,
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      physics: const ScrollPhysics(),
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: EdgeInsets.only(right: 8),
+                          child: Breakfast(
+                            controller.img4[index],
+                            controller.Txt3[index],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: SizedBox(
-                height: 130,
-                child: ListView.builder(
-                  itemCount: controller.img.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: EdgeInsets.only(right: 8),
-                      child: Breakfast(
-                        controller.img[index],
-                        controller.Txt[index],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: SeeAll("Select your Lunch", "See All"),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: SizedBox(
-                height: 130,
-                child: ListView.builder(
-                  itemCount: controller.img2.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: EdgeInsets.only(right: 8),
-                      child: Breakfast(
-                        controller.img2[index],
-                        controller.Txt1[index],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: SeeAll("Select your Dinner", "See All"),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: SizedBox(
-                height: 130,
-                child:  ListView.builder(
-                  itemCount: controller.img3.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: EdgeInsets.only(right: 8),
-                      child: Breakfast(
-                        controller.img3[index],
-                        controller.Txt2[index],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: SeeAll("Select Your Snack", "See All"),
-            ),
-            SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: SizedBox(
-                height: 130,
-                child: ListView.builder(
-                  itemCount: controller.img4.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  physics: const ScrollPhysics(),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      margin: EdgeInsets.only(right: 8),
-                      child: Breakfast(
-                        controller.img4[index],
-                        controller.Txt3[index],
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
           ],
         ),
       ),
