@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_getx/View/MainScreen/mainscreen.dart';
 import 'package:get/get.dart';
 
 import '../../View Model/DietTypeController/diettypecontroller.dart';
@@ -82,13 +83,37 @@ class DietType extends StatelessWidget {
               height: 10,
             ),
             CustomElevatedButton(label: 'Balance Diet'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'Vegetarian'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'Vegan'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'Low Carb'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'High Protein'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'Wheat-Free'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'Diabetic Diet'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'Pescatarian'),
+            SizedBox(
+              height: 10,
+            ),
             CustomElevatedButton(label: 'Athlete'),
             SizedBox(
               height: 10,
@@ -98,8 +123,7 @@ class DietType extends StatelessWidget {
               height: 45,
               child: ElevatedButton(
                 onPressed: () {
-                  // // Access the selected diet using the controller
-                  // print("Selected Diet: ${controller.selectedDiet.value}");
+                  Get.to(mainscreen());
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xFFDFDFDF),
@@ -132,10 +156,10 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final DietController controller = Get.find(); // Access the controller
     return SizedBox(
-      width: 270,
+      height: 40,
+      width: 330,
       child: ElevatedButton(
         onPressed: () {
-          // Update the selected diet using the controller
           controller.setSelectedDiet(label);
           print(label);
         },

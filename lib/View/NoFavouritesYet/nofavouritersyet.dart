@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_getx/View/EditProfile/editprofile.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class NoFavouritesYet extends StatefulWidget {
   const NoFavouritesYet({super.key});
@@ -68,7 +71,7 @@ class _NoFavouritesYetState extends State<NoFavouritesYet> {
             height: 30,
             child: ElevatedButton(
               onPressed: () {
-                // Add your button's action here
+                Get.to(EditProfile());
               },
               style: ElevatedButton.styleFrom(
                 primary: Color.fromRGBO(229, 76, 56, 1), // Background color

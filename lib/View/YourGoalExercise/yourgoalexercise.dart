@@ -130,8 +130,8 @@ class yourgoalexercise extends StatelessWidget {
         print(title);
       },
       child: SizedBox(
-        height: 40,
-        width: 275,
+        height: 50,
+        width: 330,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),

@@ -86,7 +86,7 @@ class _YourProfileState extends State<YourProfile> {
 
            SizedBox(
              height: 40,
-             width: 270,
+             width: 310,
              child: ElevatedButton(
                onPressed: () {
                  // Add your onPressed function here
@@ -107,7 +107,7 @@ class _YourProfileState extends State<YourProfile> {
            SizedBox(height: 20,),
            SizedBox(
              height: 40,
-             width: 272,
+             width: 310,
              child: ElevatedButton(
                onPressed: () {
                  // Add your onPressed function here
@@ -128,7 +128,7 @@ class _YourProfileState extends State<YourProfile> {
            SizedBox(height: 20,),
            SizedBox(
              height: 40,
-             width: 270,
+             width: 310,
              child: ElevatedButton(
                onPressed: () {
                  // Add your onPressed function here

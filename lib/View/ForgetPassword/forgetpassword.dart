@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_getx/View/VerifyEmail/verifyyouremail.dart';
 import 'package:get/get.dart';
 import '../EditProfile/editprofile.dart';
 
@@ -114,7 +115,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     CustomButton(
                       text: 'Send',
                       onPressed: () {
-                        // Add your button's action here
+                        Get.to(VerifyYourEmail());
                       },
                       backgroundColor: Color.fromRGBO(229, 76, 56, 1),
                       textColor: Colors

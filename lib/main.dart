@@ -7,12 +7,15 @@ import 'package:food_app_getx/View/MainScreen/mainscreen.dart';
 import 'package:food_app_getx/View/MaintainBalance/maintainbalance.dart';
 import 'package:food_app_getx/View/MaintainBalanceSecondScreen/MaintainBalanceSecondScreen.dart';
 import 'package:food_app_getx/View/NoFavouritesYet/nofavouritersyet.dart';
+import 'package:food_app_getx/View/Sign%20Up/Sign_Up.dart';
 import 'package:food_app_getx/View/Stariting%20Screens/first_page.dart';
 import 'package:food_app_getx/View/VerifyEmail/verifyyouremail.dart';
+import 'package:food_app_getx/View/Welcome/Welcome.dart';
 import 'package:food_app_getx/View/YourGoal/yourgoal.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import 'View/Sign In/Sign_In.dart';
 import 'View/YourGender/yourgender.dart';
 
 void main() {
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
       debugShowCheckedModeBanner: false,
-      home: ChangePassword(),
+      home: SignIn(),
     );
   }
 }

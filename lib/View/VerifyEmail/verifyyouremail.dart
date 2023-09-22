@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_app_getx/View/ChangePassword/changepassword.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -121,7 +122,7 @@ class _VerifyYourEmailState extends State<VerifyYourEmail> {
                     CustomButton(
                       text: 'Send',
                       onPressed: () {
-                        // Add your button's action here
+                        Get.to(ChangePassword());
                       },
                       backgroundColor: Color.fromRGBO(229, 76, 56, 1),
                       textColor: Colors

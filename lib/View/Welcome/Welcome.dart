@@ -1,6 +1,8 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-
+import 'package:food_app_getx/View/YourGoal/yourgoal.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -8,6 +10,7 @@ class Welcome extends StatefulWidget {
   @override
   State<Welcome> createState() => _WelcomeState();
 }
+
 class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,8 @@ class _WelcomeState extends State<Welcome> {
         child: Column(
           children: [
             SizedBox(height: 40),
-            Align(alignment: Alignment.topLeft,
+            Align(
+              alignment: Alignment.topLeft,
               // child: showCountryPicker(
               //   context: context,
               //   showPhoneCode: true, // optional. Shows phone code before the country name.
@@ -26,15 +30,10 @@ class _WelcomeState extends State<Welcome> {
               //   },
               // ),
             ),
-            SizedBox(
-              height: 50,
-            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
               child: Image.asset(
-                'assets/onboard3.png',
-                height: 320,
-                width: 320,
+                'assets/welcome.png',
               ),
             ),
             SizedBox(
@@ -76,6 +75,7 @@ class _WelcomeState extends State<Welcome> {
               width: 300,
               child: ElevatedButton(
                 onPressed: () {
+                  Get.to(YourGoal());
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Color(0xffE54C38),

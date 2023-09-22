@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_getx/View/ForgetPassword/forgetpassword.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -132,14 +133,13 @@ class _EditProfileState extends State<EditProfile> {
                     obscureText:
                         true, // Set to true for confirmed password fields
                   ),
-
                   SizedBox(
                     height: 65,
                   ),
                   CustomButton(
                     text: 'Save',
                     onPressed: () {
-                      // Add your button's action here
+                      Get.to(ForgetPassword());
                     },
                   ),
                   SizedBox(height: 16), // Add some spacing between buttons

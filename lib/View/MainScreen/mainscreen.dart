@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_getx/View/Favourites/Favourites.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class mainscreen extends StatefulWidget {
   const mainscreen({Key? key}) : super(key: key);
@@ -479,7 +482,7 @@ class _mainscreenState extends State<mainscreen> {
                           width: 150,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Add your button's action here
+                              Get.to(Favourites());
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Colors.red, // Background color

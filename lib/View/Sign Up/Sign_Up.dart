@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app_getx/View/Sign%20In/Sign_In.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
 import '../../View Model/SignUpViewModel/SignUpViewModel.dart';
+
 
 class SignUp extends StatelessWidget {
   SignUp({super.key});
@@ -121,9 +121,9 @@ class SignUp extends StatelessWidget {
   }
 
   Widget CustomTextField(
-      String icon,
-      String hinttext,
-      ) {
+    String icon,
+    String hinttext,
+  ) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -140,7 +140,7 @@ class SignUp extends StatelessWidget {
       width: Get.width * 1.1,
       child: TextFormField(
         onChanged: (value) {
-          if (hinttext == "First Name") {
+          if(hinttext == "First Name") {
             controller.FirstName.value = value;
           } else if (hinttext == "Last Name") {
             controller.LastName.value = value;
@@ -164,9 +164,9 @@ class SignUp extends StatelessWidget {
             ),
             suffixIcon: hinttext == "Password"
                 ? Icon(
-              CupertinoIcons.eye_fill,
-              color: Color(0xff2f7825),
-            )
+                    CupertinoIcons.eye_fill,
+                    color: Color(0xff2f7825),
+                  )
                 : SizedBox()),
       ),
     );

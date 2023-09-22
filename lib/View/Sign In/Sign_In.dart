@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app_getx/View/Sign%20Up/Sign_Up.dart';
+import 'package:food_app_getx/View/Welcome/Welcome.dart';
 import 'package:get/get.dart';
 
 import '../../View Model/SignInViewModel/SignInViewModel.dart';
@@ -39,7 +40,9 @@ class SignIn extends StatelessWidget {
               Align(
                 alignment: Alignment.topRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: Text(
                     "Forget Password?",
                     style: TextStyle(
@@ -55,8 +58,7 @@ class SignIn extends StatelessWidget {
                 width: Get.width * .4500,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Add your button press logic here
-                    print('Button pressed');
+                    Get.to(Welcome());
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Color(0xffE54C38),
@@ -105,7 +107,10 @@ class SignIn extends StatelessWidget {
                       color: Color(0xffBBBBBB),
                     ),
                   ),
-                  InkWell(onTap: (){Get.to(() => SignUp());},
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => SignUp());
+                    },
                     child: Text(
                       ' Sign Up',
                       style: TextStyle(
@@ -125,9 +130,9 @@ class SignIn extends StatelessWidget {
   }
 
   Widget CustomTextField(
-      String icon,
-      String hinttext,
-      ) {
+    String icon,
+    String hinttext,
+  ) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -144,11 +149,11 @@ class SignIn extends StatelessWidget {
       width: Get.width * 1.1,
       child: TextFormField(
         onChanged: (value) {
-          if (hinttext == "johnsondoe@nomail.com.") {
-            controller.email.value = value;
-          } else {
-            controller.password.value = value;
-          }
+            if (hinttext == "johnsondoe@nomail.com.") {
+              controller.email.value = value;
+            } else {
+              controller.password.value = value;
+            }
         },
         decoration: InputDecoration(
           border: InputBorder.none,
@@ -164,10 +169,10 @@ class SignIn extends StatelessWidget {
           ),
           suffixIcon: hinttext == "johnsondoe@nomail.com."
               ? SizedBox()
-              : Icon(
-            CupertinoIcons.eye_fill,
-            color: Color(0xff2f7825),
-          ),
+              :Icon(
+                  CupertinoIcons.eye_fill,
+                  color: Color(0xff2f7825),
+                ),
         ),
       ),
     );

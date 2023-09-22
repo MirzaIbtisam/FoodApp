@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_getx/View/NoFavouritesYet/nofavouritersyet.dart';
 import 'package:get/get.dart';
 
 class Favourites extends StatefulWidget {
@@ -135,7 +136,7 @@ class _FavouritesState extends State<Favourites> {
                   height: 30,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Add your button's action here
+                      Get.to(NoFavouritesYet());
                     },
                     style: ElevatedButton.styleFrom(
                       primary:
