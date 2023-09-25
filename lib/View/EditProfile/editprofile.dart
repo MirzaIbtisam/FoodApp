@@ -4,9 +4,12 @@ import 'package:food_app_getx/View/ForgetPassword/forgetpassword.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class EditProfile extends StatefulWidget {
-  const EditProfile({super.key});
+import '../../View Model/EditProfileController/editprofilecontroller.dart';
 
+class EditProfile extends StatefulWidget {
+  EditProfile({super.key});
+
+  final EditProfileController controller = Get.put(EditProfileController());
   @override
   State<EditProfile> createState() => _EditProfileState();
 }
@@ -50,7 +53,7 @@ class _EditProfileState extends State<EditProfile> {
                               width: 20,
                             ),
                             Text(
-                              'Favourites',
+                              'Edit Profile',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -165,21 +168,26 @@ class _EditProfileState extends State<EditProfile> {
 
 // Custome Widgets
 class CustomTextField extends StatelessWidget {
+
   final String hintText;
   final IconData prefixIcon;
   final Color prefixIconColor;
   final bool obscureText; // Add this property
 
-  const CustomTextField({
+   CustomTextField({
     Key? key,
+
     required this.hintText,
     required this.prefixIcon,
     required this.prefixIconColor,
     this.obscureText = false, // Set a default value
   }) : super(key: key);
+  // final EditProfileController controller = Get.put(EditProfileController());
 
   @override
   Widget build(BuildContext context) {
+
+
     return TextField(
       obscureText: obscureText, // Use the obscureText property here
       decoration: InputDecoration(

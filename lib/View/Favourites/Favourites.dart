@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_getx/View%20Model/Favourites/favouritescontroller.dart';
 import 'package:food_app_getx/View/NoFavouritesYet/nofavouritersyet.dart';
 import 'package:get/get.dart';
 
-class Favourites extends StatefulWidget {
-  const Favourites({Key? key}) : super(key: key);
+class Favourites extends StatelessWidget {
+  Favourites({Key? key}) : super(key: key);
 
-  @override
-  State<Favourites> createState() => _FavouritesState();
-}
+  final FavouriteScreenController controller =
+      Get.put(FavouriteScreenController());
 
-class _FavouritesState extends State<Favourites> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +39,9 @@ class _FavouritesState extends State<Favourites> {
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                      margin: EdgeInsets.only(bottom: 12), child: Favourites());
+                    margin: EdgeInsets.only(bottom: 12),
+                    child: FavouritesCard(),
+                  );
                 },
               ),
             ),
@@ -49,8 +50,11 @@ class _FavouritesState extends State<Favourites> {
       ),
     );
   }
+}
 
-  Widget Favourites() {
+class FavouritesCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         boxShadow: [

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_getx/View%20Model/MainScreenController/mainscreencontroller.dart';
 import 'package:food_app_getx/View/Favourites/Favourites.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 class mainscreen extends StatefulWidget {
-  const mainscreen({Key? key}) : super(key: key);
-
+  final MainScreeController controller = Get.put(MainScreeController());
+  mainscreen({Key? key}) : super(key: key);
   @override
-  _mainscreenState createState() => _mainscreenState();
+  State<mainscreen> createState() => _mainscreenState();
 }
 
 class _mainscreenState extends State<mainscreen> {

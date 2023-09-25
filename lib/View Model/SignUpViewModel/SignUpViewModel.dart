@@ -8,8 +8,7 @@ class SignUpViewModel extends GetxController {
 
   void FirstNamechanged(String value) {
     FirstName.value = value;
-
-  }
+ }
   void LastNamechanged(String value) {
     LastName.value = value;
   }
