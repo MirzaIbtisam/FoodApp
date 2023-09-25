@@ -93,10 +93,7 @@ class YourGoal extends StatelessWidget {
                   height: 45,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => YourGender()),
-                      );
+                      Get.to(YourGender());
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xFFDFDFDF), // Background color
@@ -189,7 +186,7 @@ class YourGoal extends StatelessWidget {
                       ),
                     ),
                     child: Obx(
-                          () => Text(
+                      () => Text(
                         controller.selectedGoal.value == title
                             ? "Selected"
                             : "Select",

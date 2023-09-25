@@ -458,23 +458,36 @@ class _mainscreenState extends State<mainscreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 12 ,),
+                            padding: const EdgeInsets.only(
+                              left: 12,
+                            ),
                             child: Text(
                               'Subtotal',
-                              style: TextStyle( fontSize: 16,fontWeight: FontWeight.bold , color: Color.fromRGBO(229,76,56,1)),
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(229, 76, 56, 1)),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 70),
-                            child: Text('(Incl .VAT ,)' , style: TextStyle(fontSize: 12),),
+                            child: Text(
+                              '(Incl .VAT ,)',
+                              style: TextStyle(fontSize: 12),
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Text('AED 3300.00' , style: TextStyle(fontSize: 16),),
+                            child: Text(
+                              'AED 3300.00',
+                              style: TextStyle(fontSize: 16),
+                            ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(30),
                         child: SizedBox(
@@ -502,7 +515,9 @@ class _mainscreenState extends State<mainscreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

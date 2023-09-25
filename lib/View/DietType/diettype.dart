@@ -154,10 +154,11 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DietController controller = Get.find(); // Access the controller
+    final DietController controller =
+        Get.put(DietController()); // Access the controller
     return SizedBox(
       height: 40,
-      width: 330,
+      width: 310,
       child: ElevatedButton(
         onPressed: () {
           controller.setSelectedDiet(label);

@@ -133,7 +133,7 @@ class YourGender extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 0, 190, 0),
           child: Obx(
-                () => Text(
+            () => Text(
               controller.selectedGender.value == gender ? "Selected" : gender,
             ),
           ),

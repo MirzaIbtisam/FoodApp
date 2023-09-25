@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_getx/View/ChangePassword/changepassword.dart';
+import 'package:food_app_getx/View/DietType/diettype.dart';
 import 'package:food_app_getx/View/EditProfile/editprofile.dart';
 import 'package:food_app_getx/View/Favourites/Favourites.dart';
 import 'package:food_app_getx/View/ForgetPassword/forgetpassword.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
       debugShowCheckedModeBanner: false,
-      home: SignIn(),
+      home:mainscreen(),
     );
   }
 }
