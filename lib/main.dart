@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       builder: (context, widget) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, widget!),
-        maxWidth: 1200,
+        maxWidth: 1500,
         minWidth: 300,
         defaultScale: true,
         breakpoints: [
@@ -40,11 +40,13 @@ class MyApp extends StatelessWidget {
           ResponsiveBreakpoint.resize(500, name: MOBILE),
           ResponsiveBreakpoint.resize(700, name: TABLET),
           ResponsiveBreakpoint.resize(900, name: TABLET),
-          ResponsiveBreakpoint.resize(1200, name: TABLET),
+          ResponsiveBreakpoint.resize(1100, name: TABLET),
+          ResponsiveBreakpoint.resize(1300, name: TABLET),
+          ResponsiveBreakpoint.resize(1500, name: TABLET),
         ],
       ),
       debugShowCheckedModeBanner: false,
-      home: EditProfile(),
+      home: mainscreen(),
     );
   }
 }

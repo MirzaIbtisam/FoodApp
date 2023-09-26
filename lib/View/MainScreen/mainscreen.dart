@@ -21,64 +21,68 @@ class _mainscreenState extends State<mainscreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 40, 10, 0),
               child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5), // Shadow color
+                      blurRadius: 2, // Blur radius
+                      offset: Offset(1.1, 2.1), // Offset of the shadow
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(32),
+                  color: Colors.white,
+                ),
                 height: 300,
-                width: 340,
-                child: Card(
-                  clipBehavior: Clip.antiAlias,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        Stack(
-                          children: [
-                            Image.asset(
-                              'assets/vegetable-salad-plate.png',
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
-                              child: Icon(Icons.arrow_back_ios_new_outlined,
-                                  color: Colors.white),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
-                              child: Text('OPTIMUM DIGESTION AND',
-                                  style: TextStyle(fontSize: 10)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(105, 10, 0, 0),
-                              child: Container(
-                                height: 30,
-                                width: 80,
-                                color: Color.fromRGBO(229, 76, 56, 1),
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 7, 0, 0),
-                                  child: Text(
-                                    '20% OFF',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
+                width: 330,
+                child: Container(
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          Image.asset(
+                            'assets/vegetable-salad-plate.png',
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                            child: Icon(Icons.arrow_back_ios_new_outlined,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                            child: Text('OPTIMUM DIGESTION AND',
+                                style: TextStyle(fontSize: 10)),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(105, 10, 0, 0),
+                            child: Container(
+                              height: 30,
+                              width: 80,
+                              color: Color.fromRGBO(229, 76, 56, 1),
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(10, 7, 0, 0),
+                                child: Text(
+                                  '20% OFF',
+                                  style: TextStyle(color: Colors.white),
                                 ),
                               ),
-                            )
-                          ],
+                            ),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 240, 0),
+                        child: Text(
+                          'HEALING',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(229, 76, 56, 1)),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 240, 0),
-                          child: Text(
-                            'HEALING',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(229, 76, 56, 1)),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -99,70 +103,79 @@ class _mainscreenState extends State<mainscreen> {
             ClipRRect(
               borderRadius: BorderRadius.circular(30),
               child: Container(
-                height: 90,
-                width: 340,
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  'Calories',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(
-                                  height: 7,
-                                ),
-                                Text('1200'),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              'Proteins',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 7,
-                            ),
-                            Text(
-                              '120-150g',
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              'Carbs',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 7,
-                            ),
-                            Text('120-150g')
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              'Fats',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 7,
-                            ),
-                            Text('120-150g'),
-                          ],
-                        ),
-                      ],
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5), // Shadow color
+                      blurRadius: 2, // Blur radius
+                      offset: Offset(1.1, 2.1), // Offset of the shadow
                     ),
+                  ],
+                  borderRadius: BorderRadius.circular(32),
+                  color: Colors.white,
+                ),
+                height: 90,
+                width: 330,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                'Calories',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 7,
+                              ),
+                              Text('1200'),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            'Proteins',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 7,
+                          ),
+                          Text(
+                            '120-150g',
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            'Carbs',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 7,
+                          ),
+                          Text('120-150g')
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            'Fats',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 7,
+                          ),
+                          Text('120-150g'),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -192,7 +205,20 @@ class _mainscreenState extends State<mainscreen> {
                         padding: const EdgeInsets.only(left: 10),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(30),
-                          child: Card(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey
+                                      .withOpacity(0.5), // Shadow color
+                                  blurRadius: 2, // Blur radius
+                                  offset:
+                                      Offset(1.1, 2.1), // Offset of the shadow
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(32),
+                              color: Colors.white,
+                            ),
                             child: Column(
                               children: [
                                 Image.asset(
@@ -262,110 +288,213 @@ class _mainscreenState extends State<mainscreen> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
-                child: SizedBox(
-                  height: 120,
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(5, 18, 5, 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Container(
+                height: 110,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5), // Shadow color
+                      blurRadius: 2, // Blur radius
+                      offset: Offset(1.1, 2.1), // Offset of the shadow
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(22),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
                         children: [
-                          Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: SizedBox(
-                                  child: Card(
-                                    child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                        8,
-                                        0,
-                                        0,
-                                        0,
-                                      ),
-                                      child: Text(
-                                        ' Suggested 1100-1300',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Color.fromRGBO(
-                                              229,
-                                              76,
-                                              56,
-                                              1,
-                                            ),
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ),
-                                  height: 40,
-                                  width: 100,
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey
+                                      .withOpacity(0.5), // Shadow color
+                                  blurRadius: 2, // Blur radius
+                                  offset:
+                                      Offset(1.1, 2.1), // Offset of the shadow
                                 ),
+                              ],
+                              borderRadius: BorderRadius.circular(32),
+                              color: Colors.white,
+                              // Apply the borderRadius here
+                            ),
+                            child: Text(
+                              ' Suggested 1100-1300',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Color.fromRGBO(229, 76, 56, 1),
+                                fontWeight: FontWeight.bold,
                               ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: SizedBox(
-                                  child: Card(
-                                    child: Center(child: Text('1100-1300')),
-                                  ),
-                                  height: 40,
-                                  width: 100,
-                                ),
-                              ),
-                            ],
+                              textAlign: TextAlign.center,
+                            ),
                           ),
-                          Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: SizedBox(
-                                  child: Card(
-                                    child: Center(child: Text('1100-1300')),
-                                  ),
-                                  height: 40,
-                                  width: 100,
-                                ),
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: SizedBox(
-                                  child: Card(
-                                    child: Center(child: Text('1100-1300')),
-                                  ),
-                                  height: 40,
-                                  width: 100,
-                                ),
-                              ),
-                            ],
+                          SizedBox(
+                            height: 10,
                           ),
-                          Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: SizedBox(
-                                  child: Card(
-                                    child: Center(child: Text('1100-1300')),
-                                  ),
-                                  height: 40,
-                                  width: 100,
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey
+                                      .withOpacity(0.5), // Shadow color
+                                  blurRadius: 2, // Blur radius
+                                  offset:
+                                      Offset(1.1, 2.1), // Offset of the shadow
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(32),
+                              color: Colors.white,
+                              // Apply the borderRadius here
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '1100-1300',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: SizedBox(
-                                  child: Card(
-                                    child: Center(child: Text('1100-1300')),
-                                  ),
-                                  height: 40,
-                                  width: 100,
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ],
                       ),
-                    ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey
+                                      .withOpacity(0.5), // Shadow color
+                                  blurRadius: 2, // Blur radius
+                                  offset:
+                                      Offset(1.1, 2.1), // Offset of the shadow
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(32),
+                              color: Colors.white,
+                              // Apply the borderRadius here
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '1100-1300',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey
+                                      .withOpacity(0.5), // Shadow color
+                                  blurRadius: 2, // Blur radius
+                                  offset:
+                                      Offset(1.1, 2.1), // Offset of the shadow
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(32),
+                              color: Colors.white,
+                              // Apply the borderRadius here
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '1100-1300',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey
+                                      .withOpacity(0.5), // Shadow color
+                                  blurRadius: 2, // Blur radius
+                                  offset:
+                                      Offset(1.1, 2.1), // Offset of the shadow
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(32),
+                              color: Colors.white,
+                              // Apply the borderRadius here
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '1100-1300',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey
+                                      .withOpacity(0.5), // Shadow color
+                                  blurRadius: 2, // Blur radius
+                                  offset:
+                                      Offset(1.1, 2.1), // Offset of the shadow
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(32),
+                              color: Colors.white,
+                              // Apply the borderRadius here
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '1100-1300',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -418,7 +547,18 @@ class _mainscreenState extends State<mainscreen> {
               child: SizedBox(
                 width: 330,
                 height: 150,
-                child: Card(
+                child: Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5), // Shadow color
+                        blurRadius: 2, // Blur radius
+                        offset: Offset(1.1, 2.1), // Offset of the shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(32),
+                    color: Colors.white,
+                  ),
                   child: Column(
                     children: [
                       SizedBox(

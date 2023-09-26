@@ -16,9 +16,6 @@ class MainScreeController extends GetxController {
 
 
 
-
-
-
 class Post {
   RxList<String> mainimage = <String>[].obs;
   RxString mainimagetext = ''.obs;
