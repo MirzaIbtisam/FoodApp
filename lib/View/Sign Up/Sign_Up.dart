@@ -9,8 +9,8 @@ import '../../View Model/SignUpViewModel/SignUpViewModel.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({super.key});
-
   final SignUpViewModel controller = Get.put(SignUpViewModel());
+
 
   @override
   Widget build(BuildContext context) {

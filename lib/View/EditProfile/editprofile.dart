@@ -168,15 +168,13 @@ class _EditProfileState extends State<EditProfile> {
 
 // Custome Widgets
 class CustomTextField extends StatelessWidget {
-
   final String hintText;
   final IconData prefixIcon;
   final Color prefixIconColor;
   final bool obscureText; // Add this property
 
-   CustomTextField({
+  CustomTextField({
     Key? key,
-
     required this.hintText,
     required this.prefixIcon,
     required this.prefixIconColor,
@@ -186,8 +184,6 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return TextField(
       obscureText: obscureText, // Use the obscureText property here
       decoration: InputDecoration(
