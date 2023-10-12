@@ -5,39 +5,21 @@ import 'package:food_app_getx/constant/assets/assets.dart';
 import 'package:food_app_getx/constant/color/color.dart';
 import 'package:get/get.dart';
 
+import '../../View Model/BreakFastMealViewModel/BreakFastMealViewModel.dart';
 import '../../constant/Widgets/widgets.dart';
 import '../New Offers/NewOffers.dart';
 
-class BreakfastMeal extends StatelessWidget {
-  BreakfastMeal({Key? key}) : super(key: key);
+class BreakfastMeal extends StatefulWidget {
+  bool isSelectBreakfast;
 
-  final List<String> files = [
-    ImageAssets.ChickenBoti,
-    ImageAssets.chickenkabab,
-    ImageAssets.beefburgur,
-    ImageAssets.Potatosnaks,
-  ];
+  BreakfastMeal({Key? key, required this.isSelectBreakfast}) : super(key: key);
 
-  final List<String> img = [
-    ImageAssets.Salad$Veg,
-    ImageAssets.EegVeg,
-    ImageAssets.breadEeg,
-    ImageAssets.ChickenBoti,
-    ImageAssets.beefburgur,
-    ImageAssets.chickenkabab,
-  ];
+  @override
+  State<BreakfastMeal> createState() => _BreakfastMealState();
+}
 
-  final List<String> Txt = [
-    "Salad and Vegetables",
-    "Egg and Vegetables",
-    "Bread and Egg",
-    "Chicken Boti ",
-    "Beef Burger",
-    "Chicken Kabab",
-  ];
-
-  final currentIndex = 1.obs;
-
+class _BreakfastMealState extends State<BreakfastMeal> {
+  BreakFastMealViewModel controller = Get.put(BreakFastMealViewModel());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +41,9 @@ class BreakfastMeal extends StatelessWidget {
                 ),
                 SizedBox(width: 20),
                 Text(
-                  "Select Breakfast Meal",
+                  widget.isSelectBreakfast
+                      ? "Select Breakfast Meal"
+                      : "Replace More Delicious Meal",
                   style: TextStyle(
                       fontSize: 15,
                       color: ColorValues.darkSubtitleTextColor,
@@ -69,14 +53,14 @@ class BreakfastMeal extends StatelessWidget {
             ),
             SizedBox(height: 20),
             CarouselSlider.builder(
-              itemCount: files.length,
+              itemCount: controller.files.length,
               itemBuilder: (BuildContext context, int index, int realIndex) {
                 return Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32.0),
                     image: DecorationImage(
                       image: AssetImage(
-                        files[currentIndex
+                        controller.files[controller.currentIndex
                             .value], // Use currentIndex.value to get the value from the observable.
                       ),
                       fit: BoxFit.cover,
@@ -87,7 +71,7 @@ class BreakfastMeal extends StatelessWidget {
               options: CarouselOptions(
                 aspectRatio: 16 / 9,
                 viewportFraction: 0.8,
-                initialPage: files.length,
+                initialPage: controller.files.length,
                 enableInfiniteScroll: false,
                 reverse: false,
                 autoPlay: true,
@@ -98,7 +82,7 @@ class BreakfastMeal extends StatelessWidget {
                 enlargeFactor: 0.3,
                 scrollDirection: Axis.horizontal,
                 onPageChanged: (int index, CarouselPageChangedReason reason) {
-                  currentIndex.value = index; // Update currentIndex using GetX.
+                  controller.currentIndex.value = index; // Update currentIndex using GetX.
                 },
               ),
             ),
@@ -169,7 +153,10 @@ class BreakfastMeal extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                InkWell(onTap: (){Get.to(() => NewOffers()); },
+                InkWell(
+                  onTap: () {
+                    Get.to(() => NewOffers());
+                  },
                   child: Text(
                     "See All",
                     style: TextStyle(
@@ -196,7 +183,7 @@ class BreakfastMeal extends StatelessWidget {
                   ),
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
-                    return Breakfast(img[index], Txt[index]);
+                    return Breakfast(controller.img[index], controller.Txt[index]);
                   },
                 ),
               ),
@@ -213,7 +200,7 @@ class BreakfastMeal extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(32))),
                   child: Text(
-                    "Select",
+                    widget.isSelectBreakfast ? "Select" : "Replace",
                     style: TextStyle(
                         fontSize: 12,
                         color: ColorValues.whiteColor,

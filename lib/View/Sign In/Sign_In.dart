@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app_getx/View/Home%20Screen/Home_Screen.dart';
+import 'package:food_app_getx/View/Forgot%20Password/Forgot_Password.dart';
+import 'package:food_app_getx/View/Main%20Screen/Main_Screen.dart';
 import 'package:food_app_getx/View/Sign%20Up/Sign_Up.dart';
 import 'package:food_app_getx/constant/color/color.dart';
 import 'package:get/get.dart';
@@ -36,13 +37,15 @@ class SignIn extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 40),
-              CustomTextField(ImageAssets.mailBox, "johnsondoe@nomail.com."),
+              CustomTextField(ImageAssets.mailBox,"johnsondoe@nomail.com."),
               SizedBox(height: 20),
-              CustomTextField(ImageAssets.Lock, "••••••••••••••••••••"),
+              CustomTextField(ImageAssets.Lock,"••••••••••••••••••••"),
               Align(
                 alignment: Alignment.topRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => ForgotPassword());
+                  },
                   child: Text(
                     "Forget Password?",
                     style: TextStyle(
@@ -58,7 +61,7 @@ class SignIn extends StatelessWidget {
                 width: Get.width * .4500,
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.to(() => HomeScreen());
+                    Get.to(() => MainScreen());
                     // Add your button press logic here
                     print('Button pressed');
                   },

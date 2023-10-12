@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_app_getx/View%20Model/GoalViewModel/GoalViewModel.dart';
+import 'package:food_app_getx/View/Replace%20Meal/Replace_Meal.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -115,7 +116,7 @@ Widget SeeAll(
       SizedBox(height: 10),
       InkWell(
         onTap: () {
-          Get.to(() => BreakfastMeal());
+          Get.to(() =>  BreakfastMeal(isSelectBreakfast: true,));
         },
         child: Text(
           Txt2,
@@ -221,7 +222,7 @@ Widget SelectDinner(
                   Text(
                     "Nutrient-Rich Breakfast Delight: Scr\nambled Eggs and Whole-Grain\nBread\nNutrient-Rich Breakfast Delight: Scr",
                     style: TextStyle(
-                      fontSize: 11,
+                      fontSize: 9,
                       fontFamily: "Gilory",
                       color: ColorValues.darkSubtitleTextColor,
                     ),
@@ -231,7 +232,7 @@ Widget SelectDinner(
                     width: Get.width * 0.2500,
                     height: 30,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {Get.to(() => ReplaceMeal());},
                         style: ElevatedButton.styleFrom(
                             primary: ColorValues.ElevatedColor,
                             shape: RoundedRectangleBorder(
@@ -267,7 +268,7 @@ Widget buildGoalCard(String title, String description) {
             offset: Offset(0, 2.1),
           ),
         ]),
-    height: Get.height * 0.2500,
+    height: Get.height * 0.3,
     width: Get.width,
     child: Column(
       children: [
@@ -339,5 +340,39 @@ Widget buildGoalCard(String title, String description) {
         ),
       ],
     ),
+  );
+}
+
+Widget SeeAll1(
+    String Txt1,
+    String Txt2,
+    ) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(
+        Txt1,
+        style: TextStyle(
+          fontSize: 12,
+          fontFamily: "Gilory",
+          fontWeight: FontWeight.bold,
+          color: ColorValues.darkSubtitleTextColor,
+        ),
+      ),
+      SizedBox(height: 10),
+      InkWell(
+        onTap: () {
+          Get.to(() =>  BreakfastMeal(isSelectBreakfast: false,));
+        },
+        child: Text(
+          Txt2,
+          style: TextStyle(
+            fontSize: 10,
+            fontFamily: "Gilory",
+            color: ColorValues.lightredColor,
+          ),
+        ),
+      ),
+    ],
   );
 }

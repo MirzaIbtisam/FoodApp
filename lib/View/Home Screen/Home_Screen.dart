@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app_getx/View%20Model/HomeScreenViewModel/HomeScreenViewModel.dart';
 import 'package:food_app_getx/View/Chooes%20Meal%20Plan/Meal_Plan.dart';
+import 'package:food_app_getx/View/Notification/Notification.dart';
+import 'package:food_app_getx/constant/Widgets/Widget3.dart';
 
 import 'package:get/get.dart';
+
+import '../../View Model/HomeScreenViewModel/HomeScreenViewModel.dart';
 
 import '../../constant/Widgets/widgets.dart';
 import '../../constant/assets/assets.dart';
 import '../../constant/color/color.dart';
-
+import '../Bottom bar/Bottom_Bar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -17,7 +20,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final HomeScreenViewModel controller = Get.put(HomeScreenViewModel());
- // Initialize your controller
+
+  // Initialize your controller
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,18 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: ColorValues.ElevatedColor,
                         ),
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: ColorValues.whiteColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        height: 30,
-                        width: 30,
-                        child: SvgPicture.asset(
-                          ImageAssets.Notification,
-                          fit: BoxFit.scaleDown,
-                        ),
-                      ),
+                      InkWell(
+                          onTap: () {
+                            Get.to(() => NotificationScreen());
+                          },
+                          child: NotiDel(ImageAssets.Notification)),
                     ],
                   ),
                   SizedBox(height: 5),
@@ -112,8 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: Get.width * .5,
                     height: 32,
                     child: ElevatedButton(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         primary: Colors.white,
                         shape: RoundedRectangleBorder(
@@ -165,9 +161,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           onPressed: controller.navigateToPreviousDay,
                         ),
                         Obx(() => Text(
-                          ' ${controller.formattedDate} ',
-                          style: TextStyle(fontSize: 12),
-                        )),
+                              ' ${controller.formattedDate} ',
+                              style: TextStyle(fontSize: 12),
+                            )),
                         IconButton(
                           icon: Icon(
                             Icons.arrow_forward_ios,
@@ -284,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.only(left: 15),
               child: SizedBox(
                 height: 130,
-                child:  ListView.builder(
+                child: ListView.builder(
                   itemCount: controller.img3.length,
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,

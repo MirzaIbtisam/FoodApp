@@ -63,5 +63,40 @@ class ImageAssets {
 
   static const String Potatosnaksveg = "assets/potato-snak-veg.jpg";
 
+  static const String BackIcon = "assets/Back_Icon.svg";
+
+  static const String DeleteIcon = "assets/Delete.svg";
+
+  static const String Noti = "assets/Notification2.svg";
+
+  static const String Home = "assets/Home.svg";
+
+  static const String Profile = "assets/profile.svg";
+
+  static const String Favourite = "assets/Favourite.svg";
+
+  static const String Setting = "assets/Setting.svg";
+
+  static const String FavouriteScreen = "assets/Favourite_Screen.svg";
+
+  static const String profilepic = "assets/profilepic.webp";
+
+  static const String Edit = "assets/Edit.svg";
+
+  static const String mail = "assets/mail.svg";
+
+  static const String pausebutton = "assets/Pause button.svg";
+
+  static const String transcation = "assets/Transaction.svg";
+
+  static const String shared = "assets/Shared.svg";
+
+  static const String order = "assets/order.svg";
+
+  static const String forgetpassword = "assets/Forgot password.svg";
+
+  static const String BackArrow = "assets/back_arrow.svg";
+
+  static const String mail1 = "assets/mail1.svg";
 
 }
